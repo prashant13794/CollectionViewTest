@@ -14,6 +14,11 @@
 		BB0237DB1B997DCA005C367B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0237DA1B997DCA005C367B /* Images.xcassets */; };
 		BB0237DE1B997DCA005C367B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0237DC1B997DCA005C367B /* LaunchScreen.xib */; };
 		BB0237EA1B997DCB005C367B /* CollectionViewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0237E91B997DCB005C367B /* CollectionViewTestTests.m */; };
+		BB02381D1B99AB36005C367B /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB02381B1B99AB36005C367B /* CustomCollectionViewCell.m */; };
+		BB02381E1B99AB36005C367B /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB02381C1B99AB36005C367B /* CustomCollectionViewCell.xib */; };
+		BB0238211B9C71EA005C367B /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0238201B9C71EA005C367B /* PageContentViewController.m */; };
+		BB0238241B9CBA98005C367B /* CustomPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0238231B9CBA98005C367B /* CustomPageViewController.m */; };
+		BB0238271B9DA10D005C367B /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0238261B9DA10D005C367B /* PopUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,15 @@
 		BB0237E31B997DCB005C367B /* CollectionViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0237E81B997DCB005C367B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB0237E91B997DCB005C367B /* CollectionViewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTestTests.m; sourceTree = "<group>"; };
+		BB02381A1B99AB36005C367B /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		BB02381B1B99AB36005C367B /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		BB02381C1B99AB36005C367B /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB02381F1B9C71EA005C367B /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		BB0238201B9C71EA005C367B /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		BB0238221B9CBA98005C367B /* CustomPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPageViewController.h; sourceTree = "<group>"; };
+		BB0238231B9CBA98005C367B /* CustomPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageViewController.m; sourceTree = "<group>"; };
+		BB0238251B9DA10D005C367B /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
+		BB0238261B9DA10D005C367B /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +103,15 @@
 				BB0237DA1B997DCA005C367B /* Images.xcassets */,
 				BB0237DC1B997DCA005C367B /* LaunchScreen.xib */,
 				BB0237CD1B997DCA005C367B /* Supporting Files */,
+				BB02381A1B99AB36005C367B /* CustomCollectionViewCell.h */,
+				BB02381B1B99AB36005C367B /* CustomCollectionViewCell.m */,
+				BB02381C1B99AB36005C367B /* CustomCollectionViewCell.xib */,
+				BB02381F1B9C71EA005C367B /* PageContentViewController.h */,
+				BB0238201B9C71EA005C367B /* PageContentViewController.m */,
+				BB0238221B9CBA98005C367B /* CustomPageViewController.h */,
+				BB0238231B9CBA98005C367B /* CustomPageViewController.m */,
+				BB0238251B9DA10D005C367B /* PopUpViewController.h */,
+				BB0238261B9DA10D005C367B /* PopUpViewController.m */,
 			);
 			path = CollectionViewTest;
 			sourceTree = "<group>";
@@ -201,6 +224,7 @@
 			files = (
 				BB0237D91B997DCA005C367B /* Main.storyboard in Resources */,
 				BB0237DE1B997DCA005C367B /* LaunchScreen.xib in Resources */,
+				BB02381E1B99AB36005C367B /* CustomCollectionViewCell.xib in Resources */,
 				BB0237DB1B997DCA005C367B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +245,11 @@
 			files = (
 				BB0237D61B997DCA005C367B /* ViewController.m in Sources */,
 				BB0237D31B997DCA005C367B /* AppDelegate.m in Sources */,
+				BB0238211B9C71EA005C367B /* PageContentViewController.m in Sources */,
+				BB0238271B9DA10D005C367B /* PopUpViewController.m in Sources */,
 				BB0237D01B997DCA005C367B /* main.m in Sources */,
+				BB02381D1B99AB36005C367B /* CustomCollectionViewCell.m in Sources */,
+				BB0238241B9CBA98005C367B /* CustomPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +376,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollectionViewTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,8 +388,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollectionViewTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -416,6 +448,7 @@
 				BB0237EF1B997DCB005C367B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB0237F01B997DCB005C367B /* Build configuration list for PBXNativeTarget "CollectionViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +457,7 @@
 				BB0237F21B997DCB005C367B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

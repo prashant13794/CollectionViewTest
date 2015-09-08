@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomCollectionViewCell.h"
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIPageViewControllerDelegate,UIPageViewControllerDataSource,CustomCellButtonProtocol>
 
-@interface ViewController : UIViewController
+@property (strong,nonatomic) NSMutableArray * recipeImages;
+@property (strong, nonatomic) IBOutlet UICollectionView *myCollectionViewOutlet;
 
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgviewoutlet;
+@property (strong, nonatomic) IBOutlet UIView *myUIViewOutlet;
 
 @end
 
