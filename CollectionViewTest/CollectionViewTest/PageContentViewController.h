@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageContentViewController : UIViewController
+@interface PageContentViewController : UIViewController<NSURLConnectionDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelOutlet;
@@ -16,5 +16,6 @@
 @property (strong,nonatomic) NSString *titleText;
 @property NSUInteger *pageIndex;
 - (IBAction)backButtonAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UIProgressView *progressViewOutlet;
 
 @end

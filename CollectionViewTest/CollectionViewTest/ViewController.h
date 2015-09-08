@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 //@property (strong, nonatomic) IBOutlet UIImageView *imgviewoutlet;
 @property (strong, nonatomic) IBOutlet UIView *myUIViewOutlet;
+@property (strong, nonatomic) IBOutlet UIImageView *imageViewInsideUIViewOutlet;
 
 @end
 
