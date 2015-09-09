@@ -17,5 +17,6 @@
 @property NSUInteger *pageIndex;
 - (IBAction)backButtonAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressViewOutlet;
+@property (strong, nonatomic) IBOutlet UILabel *pageNumberLabelOutlet;
 
 @end

@@ -13,12 +13,31 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="158" height="145"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-cG-7DR">
-                        <rect key="frame" x="0.0" y="0.0" width="158" height="125"/>
+                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-cG-7DR">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="145"/>
                         <color key="backgroundColor" red="0.9723834563" green="1" blue="0.75391904620000005" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txl-S2-llb">
+                        <rect key="frame" x="0.0" y="124" width="79" height="21"/>
+                        <accessibility key="accessibilityConfiguration" label="ertert"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="83t-bH-Md2"/>
+                            <constraint firstAttribute="width" constant="79" id="FDM-fF-hOl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="highlightedColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FDM-fF-hOl"/>
+                            </mask>
+                        </variation>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lp3-Ki-zR1">
-                        <rect key="frame" x="91" y="124" width="59" height="30"/>
+                        <rect key="frame" x="91" y="115" width="59" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="eQp-ML-RMT"/>
+                        </constraints>
                         <state key="normal" title="View">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -26,38 +45,24 @@
                             <action selector="viewButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MkC-Wy-GcT"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txl-S2-llb">
-                        <rect key="frame" x="0.0" y="101" width="79" height="21"/>
-                        <accessibility key="accessibilityConfiguration" label="ertert"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="79" id="FDM-fF-hOl"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="FDM-fF-hOl"/>
-                            </mask>
-                        </variation>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="SxU-cG-7DR" secondAttribute="bottom" constant="10" id="0vb-Y7-OSg"/>
-                <constraint firstAttribute="bottom" secondItem="Lp3-Ki-zR1" secondAttribute="bottom" constant="5" id="5Dq-d4-Cme"/>
+                <constraint firstAttribute="bottom" secondItem="Lp3-Ki-zR1" secondAttribute="bottom" id="5Dq-d4-Cme"/>
                 <constraint firstItem="SxU-cG-7DR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DLi-fR-xcd"/>
-                <constraint firstAttribute="bottom" secondItem="txl-S2-llb" secondAttribute="bottom" constant="5" id="EMy-fn-CRx"/>
+                <constraint firstAttribute="bottom" secondItem="txl-S2-llb" secondAttribute="bottom" id="EMy-fn-CRx"/>
                 <constraint firstAttribute="trailing" secondItem="SxU-cG-7DR" secondAttribute="trailing" id="K8D-eg-d9w"/>
                 <constraint firstItem="SxU-cG-7DR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MNt-Jj-OQK"/>
                 <constraint firstAttribute="bottom" secondItem="SxU-cG-7DR" secondAttribute="bottom" constant="5" id="Stp-nV-vJv"/>
                 <constraint firstItem="txl-S2-llb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TgY-oU-bSQ"/>
                 <constraint firstItem="txl-S2-llb" firstAttribute="top" secondItem="SxU-cG-7DR" secondAttribute="bottom" id="b2w-yn-bvI"/>
                 <constraint firstItem="Lp3-Ki-zR1" firstAttribute="leading" secondItem="txl-S2-llb" secondAttribute="trailing" constant="10" id="c12-eU-jDp"/>
-                <constraint firstAttribute="trailing" secondItem="Lp3-Ki-zR1" secondAttribute="trailing" id="dr0-89-6QJ"/>
+                <constraint firstAttribute="trailing" secondItem="Lp3-Ki-zR1" secondAttribute="trailing" constant="10" id="dr0-89-6QJ"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SxU-cG-7DR" secondAttribute="bottom" constant="5" id="h4r-0j-VM5"/>
                 <constraint firstItem="Lp3-Ki-zR1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="124" id="kvI-YU-YpD"/>
+                <constraint firstAttribute="bottom" secondItem="SxU-cG-7DR" secondAttribute="bottom" id="mCl-ww-adU"/>
                 <constraint firstItem="txl-S2-llb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="p4m-NE-YfO"/>
                 <constraint firstItem="Lp3-Ki-zR1" firstAttribute="top" secondItem="SxU-cG-7DR" secondAttribute="bottom" id="xJ2-DL-FpP"/>
             </constraints>
@@ -68,7 +73,9 @@
                     <exclude reference="Stp-nV-vJv"/>
                     <exclude reference="h4r-0j-VM5"/>
                     <exclude reference="TgY-oU-bSQ"/>
+                    <exclude reference="b2w-yn-bvI"/>
                     <exclude reference="kvI-YU-YpD"/>
+                    <exclude reference="xJ2-DL-FpP"/>
                 </mask>
             </variation>
             <connections>

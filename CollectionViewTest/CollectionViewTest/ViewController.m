@@ -55,33 +55,54 @@
     {
         NSMutableDictionary *dict=[self.recipeImages objectAtIndex:indexPath.row];
         cell.myImageViewOutlet.backgroundColor=[UIColor redColor];
-        
+        cell.myImageViewOutlet.image=nil;
         NSString *url= [NSString stringWithFormat:@"%@",dict[@"URL"]];
         //Set up Request:
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
         [request setURL:[NSURL URLWithString:url]];
         
-        NSOperationQueue *queue=[[NSOperationQueue alloc] init];
-        if ( queue == nil ){
-            queue = [[NSOperationQueue alloc] init];
-        }
-        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * resp, NSData     *data, NSError *error)
-         {
-             dispatch_async(dispatch_get_main_queue(),^
-                            {
-                                if ( error == nil && data )
-                                {
-                                    UIImage *urlImage = [[UIImage alloc] initWithData:data];
-                                    [cell.myImageViewOutlet setImage:urlImage];
-                                }
-                            });
-         }];
+        dispatch_queue_t queue = dispatch_queue_create("queue", nil);
+        dispatch_async(queue, ^{
+           
+            // image download
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+            
+            dispatch_async(dispatch_get_main_queue(),^
+                           {
+                               if ( data )
+                               {
+                                   UIImage *urlImage = [[UIImage alloc] initWithData:data];
+                                   CustomCollectionViewCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
+                                   if (updateCell)
+                                       [updateCell.myImageViewOutlet setImage:urlImage];
+                               }
+                           });
+        });
 
+        
+        
+//        NSOperationQueue *queue=[[NSOperationQueue alloc] init];
+//        if ( queue == nil ){
+//            queue = [[NSOperationQueue alloc] init];
+//        }
+//        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * resp, NSData     *data, NSError *error)
+//         {
+//             dispatch_async(dispatch_get_main_queue(),^
+//                            {
+//                                if ( error == nil && data )
+//                                {
+//                                    UIImage *urlImage = [[UIImage alloc] initWithData:data];
+//                                    CustomCollectionViewCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
+//                                    if (updateCell)
+//                                        [updateCell.myImageViewOutlet setImage:urlImage];
+//                                }
+//                            });
+//         }];
 //        NSString *ImageURL = dict[@"URL"];
 //        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
 //        [cell.myImageViewOutlet setImage:[UIImage imageWithData:imageData]];
 //        
-        
+//        
         //[cell.myImageViewOutlet setImage:[UIImage imageNamed:[self.recipeImages objectAtIndex:indexPath.row]]];
         [cell.subtitleLabelOutlet setText:dict[@"name"]];
         cell.viewButtonOutlet.tag=indexPath.row;
@@ -90,7 +111,7 @@
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake((collectionView.frame.size.width/2)-10, 150);
+    return CGSizeMake((collectionView.frame.size.width/2)-2.5, 150);
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -183,15 +204,15 @@
     return pageContentViewController;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.recipeImages count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return [self.recipeImages count];
+//}
+//
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return 0;
+//}
 
 
 
@@ -312,7 +333,7 @@
         [array addObject:[self.recipeImages objectAtIndex:i]];
     }
     [self.recipeImages addObjectsFromArray:array];
-    [self.myCollectionViewOutlet reloadData];
+        [self.myCollectionViewOutlet reloadData];
     [spinner removeFromSuperview];
 }
 

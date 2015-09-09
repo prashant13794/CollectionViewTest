@@ -25,4 +25,12 @@
     //page.view.superview.center = self.view.center;
     //[V1 release];
 }
+//- (void)prepareForReuse {
+//    
+//    self.myImageViewOutlet.image = nil;
+//    self.subtitleLabelOutlet.text = nil;
+//    
+//    // add remaining properties
+//    
+//}
 @end
