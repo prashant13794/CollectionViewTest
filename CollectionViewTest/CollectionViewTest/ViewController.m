@@ -79,31 +79,6 @@
                            });
         });
 
-        
-        
-//        NSOperationQueue *queue=[[NSOperationQueue alloc] init];
-//        if ( queue == nil ){
-//            queue = [[NSOperationQueue alloc] init];
-//        }
-//        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * resp, NSData     *data, NSError *error)
-//         {
-//             dispatch_async(dispatch_get_main_queue(),^
-//                            {
-//                                if ( error == nil && data )
-//                                {
-//                                    UIImage *urlImage = [[UIImage alloc] initWithData:data];
-//                                    CustomCollectionViewCell *updateCell = (id)[collectionView cellForItemAtIndexPath:indexPath];
-//                                    if (updateCell)
-//                                        [updateCell.myImageViewOutlet setImage:urlImage];
-//                                }
-//                            });
-//         }];
-//        NSString *ImageURL = dict[@"URL"];
-//        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-//        [cell.myImageViewOutlet setImage:[UIImage imageWithData:imageData]];
-//        
-//        
-        //[cell.myImageViewOutlet setImage:[UIImage imageNamed:[self.recipeImages objectAtIndex:indexPath.row]]];
         [cell.subtitleLabelOutlet setText:dict[@"name"]];
         cell.viewButtonOutlet.tag=indexPath.row;
         cell.delegate=self;
@@ -147,7 +122,7 @@
         UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 80)];
         view.backgroundColor = [UIColor grayColor];
         UILabel *headerTitle=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-        headerTitle.text=@"Recipe Images";
+        headerTitle.text=@"Company Logos";
         headerTitle.textAlignment=NSTextAlignmentCenter;
         
         [view addSubview:headerTitle];
@@ -247,7 +222,7 @@
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [cancelButton addTarget:self action:@selector(exitButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
-    [cancelButton setTitle:@"x" forState:UIControlStateNormal];
+    [cancelButton setTitle:@"X" forState:UIControlStateNormal];
     cancelButton.backgroundColor=[UIColor blackColor];
     popupView.backgroundColor=[UIColor blackColor];
     [popupView addSubview:cancelButton];
@@ -315,7 +290,7 @@
         spinner.center=self.view.center;
         CGAffineTransform transform = CGAffineTransformMakeScale(3.0f, 3.0f);
         spinner.transform = transform;
-        spinner.color = [UIColor whiteColor];
+        spinner.color = [UIColor blackColor];
         [self.view addSubview:spinner];
         [spinner startAnimating];
         
@@ -327,6 +302,9 @@
 
 -(void)loadDataDelayed{
     
+    
+    
+    [spinner removeFromSuperview];
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:10];
     for (int i=0; i<10 ; i++) {
         //NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:@"id",@"1",@"name",@"", nil];
@@ -334,7 +312,6 @@
     }
     [self.recipeImages addObjectsFromArray:array];
         [self.myCollectionViewOutlet reloadData];
-    [spinner removeFromSuperview];
 }
 
 @end
